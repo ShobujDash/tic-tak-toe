@@ -16,9 +16,9 @@ function Board({ xIsNext, squares, onPlay }) {
   let status;
 
   if (winner) {
-    status = `windner: ${winner}`;
+    status = `winnner : ${winner}`;
   } else {
-    status = "Next Player" + (xIsNext ? "X" : "O");
+    status = "Next Player " + (xIsNext ? " X" : " O");
   }
 
   const handleClick = (i) => {
@@ -37,7 +37,7 @@ function Board({ xIsNext, squares, onPlay }) {
 
   return (
     <>
-      <div>{status}</div>
+      <div className="text-center">{status}</div>
 
       <div className="flex">
         <Square value={squares[0]} onSquareClick={() => handleClick(0)} />
@@ -95,7 +95,7 @@ export default function Game() {
 
   return (
     <div className="flex flex-wrap justify-center items-center  p-4">
-      <div className="mr-16">
+      <div>
         <Board xIsNext={xIsNext} squares={currentSquers} onPlay={handlePlay} />
       </div>
       <div>
